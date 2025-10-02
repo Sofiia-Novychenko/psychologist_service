@@ -1,5 +1,3 @@
-import React from 'react';
-
 function FavoritesPage() {
   return <div>FavoritesPage</div>;
 }
