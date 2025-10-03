@@ -4,9 +4,12 @@ import './index.css';
 import '@ncdai/react-wheel-picker/style.css';
 
 import App from './components/App.tsx';
+import { BrowserRouter } from 'react-router-dom';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </StrictMode>
 );
