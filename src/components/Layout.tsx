@@ -7,7 +7,7 @@ function Layout({ children }: Props) {
   return (
     <>
       <AppBar />
-      <main className="pt-24 w-full min-h-screen bg-amber-500">
+      <main className="pt-24 w-full min-h-screen">
         <div className="max-w-[1440px] mx-auto px-4 ">{children}</div>
       </main>
     </>

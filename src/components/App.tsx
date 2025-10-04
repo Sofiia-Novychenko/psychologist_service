@@ -40,7 +40,7 @@ function App() {
                 />
               }
             /> */}
-          <Route path="/psycologists" element={<PsychologistsPage />} />
+          <Route path="/psychologists" element={<PsychologistsPage />} />
           <Route path="/favorites" element={<FavoritesPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
