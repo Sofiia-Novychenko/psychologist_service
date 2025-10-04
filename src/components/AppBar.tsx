@@ -6,7 +6,7 @@ import HeaderNavigation from './HeaderNavigation';
 // function AppBar({}: Props) {
 function AppBar() {
   return (
-    <header className="bg-transparent fixed z-50 inset-x-0 top-0 w-full h-24 flex justify-between items-center border-b border-[#191a151a] px-4">
+    <header className="bg-bg-main fixed z-50 inset-x-0 top-0 w-full h-24 flex justify-between items-center border-b border-[#191a151a] px-4">
       <div className="max-w-[1184px] w-full mx-auto flex justify-between items-center py-2.5  ">
         <div className="flex mr-10">
           <a

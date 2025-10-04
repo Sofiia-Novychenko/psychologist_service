@@ -1,6 +1,3 @@
-// import Arrow1Icon from './assets/icons/arrow-up.svg?react';
-// import StarIcon from './assets/icons/star.svg?react';
-
 import { lazy, Suspense } from 'react';
 import Layout from './Layout';
 import Loader from './Loader';

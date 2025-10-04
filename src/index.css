@@ -10,6 +10,7 @@
   --font-body: 'Inter', sans-serif;
   --color-main: hsl(72, 10.64%, 9.22%);
   --color-accent: hsl(222.27 100% 60.2%);
+  --color-accent-hover: hsl(222 81% 53%);
   --color-bg-main: hsl(0, 0%, 98%);
 }
 
