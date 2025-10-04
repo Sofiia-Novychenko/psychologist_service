@@ -28,12 +28,9 @@
 }
 
 body {
-  margin: 0 16px;
-  display: flex;
-  /* place-items: center; */
+  margin: 0;
+  width: 100%;
   min-width: 320px;
-  min-height: 100vh;
-  max-width: 1440px;
   font-family: var(--font-family);
   background-color: var(--color-bg-main);
   color: var(--color-main);
