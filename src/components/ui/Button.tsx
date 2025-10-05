@@ -1,4 +1,4 @@
-import { cn } from '../services/cn';
+import { cn } from '../../services/cn';
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {

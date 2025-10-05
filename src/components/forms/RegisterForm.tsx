@@ -1,14 +1,19 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import Button from './Button';
-import CrossIcon from '../assets/icons/x.svg?react';
-import EyeIcon from '../assets/icons/eye.svg?react';
-import CrossedEyeIcon from '../assets/icons/eye-off.svg?react';
+import Button from '../ui/Button';
+import CrossIcon from '../../assets/icons/x.svg?react';
+import EyeIcon from '../../assets/icons/eye.svg?react';
+import CrossedEyeIcon from '../../assets/icons/eye-off.svg?react';
 import { useState } from 'react';
 
-function LogInForm() {
-  const loginSchema = yup.object({
+type RegisterFormProps = {
+  onClose: () => void;
+};
+
+function RegisterForm({ onClose }: RegisterFormProps) {
+  const RegisterSchema = yup.object({
+    name: yup.string().required('Name is required'),
     email: yup
       .string()
       .email('Invalid email format')
@@ -18,32 +23,48 @@ function LogInForm() {
       .min(8, 'Password must be at least 8 characters')
       .required('Password is required'),
   });
-  type LoginFormValues = yup.InferType<typeof loginSchema>;
+  type RegisterFormValues = yup.InferType<typeof RegisterSchema>;
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<LoginFormValues>({ resolver: yupResolver(loginSchema) });
-  const onSubmit = (data: LoginFormValues) => console.log(data);
+  } = useForm<RegisterFormValues>({ resolver: yupResolver(RegisterSchema) });
+  const onSubmit = (data: RegisterFormValues) => console.log(data);
   const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(prev => !prev);
   };
 
   return (
-    <div className="relative flex flex-col max-w-[565px] bg-bg-main rounded-[30px] p-16">
-      <CrossIcon className="absolute top-5 right-5 size-8 hover:text-accent-hover" />
+    <div>
+      <CrossIcon
+        className="absolute top-5 right-5 size-8 hover:text-accent-hover"
+        onClick={onClose}
+      />
 
       <h2 className="font-medium text-[40px] leading-[120%] tracking-[-0.02em] mb-5">
-        Log In
+        Registration
       </h2>
       <p className="text-main/50 leading-[125%] mb-10">
-        Welcome back! Please enter your credentials to access your account and
-        continue your search for a psychologist.
+        Thank you for your interest in our platform! In order to register, we
+        need some information. Please provide us with the following information.
       </p>
 
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4.5">
+        <label htmlFor="name" className="relative">
+          <input
+            {...register('name')}
+            placeholder="Name"
+            type="text"
+            className="focus:shadow-md outline-0 border rounded-xl py-4 px-4.5 border-[#191a151a] placeholder:leading-[125%] placeholder:text-base placeholder:text-main w-full h-[52px]"
+          />
+          {errors.name && (
+            <p className="absolute -bottom-4 left-2 text-xs text-red-600">
+              {errors.name?.message}
+            </p>
+          )}
+        </label>
         <label htmlFor="email" className="relative">
           <input
             {...register('email')}
@@ -81,10 +102,10 @@ function LogInForm() {
             </p>
           )}
         </label>
-        <Button>Log in</Button>
+        <Button>Sign Up</Button>
       </form>
     </div>
   );
 }
 
-export default LogInForm;
+export default RegisterForm;
