@@ -1,10 +1,5 @@
-import LogInForm from '../../components/LogInForm';
 function PsychologistsPage() {
-  return (
-    <div>
-      <LogInForm />
-    </div>
-  );
+  return <div>PsychologistsPage</div>;
 }
 
 export default PsychologistsPage;

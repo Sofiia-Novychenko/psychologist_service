@@ -32,7 +32,7 @@ function LogInForm() {
   };
 
   return (
-    <div className="relative flex flex-col max-w-[565px] bg-bg-main rounded-[30px] p-16 border">
+    <div className="relative flex flex-col max-w-[565px] bg-bg-main rounded-[30px] p-16">
       <CrossIcon className="absolute top-5 right-5 size-8 hover:text-accent-hover" />
 
       <h2 className="font-medium text-[40px] leading-[120%] tracking-[-0.02em] mb-5">
@@ -58,7 +58,7 @@ function LogInForm() {
             </p>
           )}
         </label>
-        <label htmlFor="password" className="relative mb-10">
+        <label htmlFor="password" className="relative mb-5.5">
           <input
             {...register('password')}
             placeholder="Password"
