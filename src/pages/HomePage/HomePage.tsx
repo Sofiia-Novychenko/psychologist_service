@@ -3,7 +3,6 @@ import Arrow1Icon from '../../assets/icons/arrow.svg?react';
 import PeopleIcon from '../../assets/icons/people_grupe.svg?react';
 import QuestionIcon from '../../assets/icons/question.svg?react';
 import CheckIcon from '../../assets/icons/check.svg?react';
-import LogInForm from '../../components/LogInForm';
 
 function HomePage() {
   return (
@@ -40,7 +39,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-      <LogInForm />
     </section>
   );
 }

@@ -14,7 +14,8 @@ const Button: React.FC<ButtonProps> = ({
       {...rest}
       disabled={disabled}
       className={cn(
-        rest.className || '',
+        rest.className ||
+          'w-full bg-accent hover:bg-accent-hover py-4 px-14 rounded-[30px] font-medium leading-[125%] tracking-[-0.01em] text-bg-main',
         disabled && 'bg-gray-500 text-gray-700 cursor-not-allowed opacity-50'
       )}
     >
